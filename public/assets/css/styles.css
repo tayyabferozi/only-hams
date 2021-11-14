@@ -1,0 +1,599 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap");
+* {
+  font-family: "Bowlby One", cursive;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a,
+button {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+a:hover,
+button:hover {
+  opacity: 0.9;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+.text-purple {
+  color: #c279fc;
+}
+
+.text-orange {
+  color: #ffab2d;
+}
+
+.hamburger > * {
+  border-radius: 10px;
+  width: 30px;
+  height: 3px;
+  margin-bottom: 7px;
+  background-color: #fff;
+}
+
+.fulljustify {
+  text-align: justify;
+}
+
+.fulljustify:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+  padding: 0 !important;
+}
+
+p {
+  font-size: 1.26rem;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 575px) {
+  p {
+    font-size: 1rem;
+  }
+}
+
+.mint-btn {
+  font-size: 1.5rem;
+  border: 0;
+  border-radius: 25px;
+  background-color: #000;
+  color: #fff !important;
+  padding: 0.5rem 2rem;
+}
+
+.mint-btn * {
+  color: #fff !important;
+}
+
+@media screen and (max-width: 575px) {
+  .mint-btn {
+    font-size: 1.25rem;
+    width: 185px;
+  }
+}
+
+.nav-sm {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  z-index: 2;
+  -webkit-transition: left 0.4s ease;
+  transition: left 0.4s ease;
+}
+
+.nav-sm.active {
+  left: 0;
+}
+
+.nav-sm .close {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  font-size: 2rem;
+  border-bottom: 0;
+}
+
+.nav-sm > * {
+  display: block;
+  padding: 0.5rem;
+  border-bottom: 1px solid #fff;
+}
+
+.nav-sm .btn {
+  border-bottom: 0;
+}
+
+.nav-sm .btn img {
+  width: 3rem;
+}
+
+.nav-sm .btn.connect img {
+  width: 10rem;
+}
+
+.nav-sm .btns {
+  border-bottom: 0;
+}
+
+#navbar {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#about,
+#NFT {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  background-color: #000;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  #navbar {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+#navbar .logo {
+  margin-right: 8vw;
+}
+
+@media screen and (min-width: 1401px) {
+  #navbar .logo {
+    margin-right: 14vw;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #navbar .logo img {
+    width: 5rem;
+  }
+}
+
+#navbar .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#navbar .nav > * {
+  margin: 1rem;
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1400px) {
+  #navbar .nav > * {
+    font-size: 0.85rem;
+  }
+}
+
+#navbar .nav > *.btn {
+  margin: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  #navbar .nav > *.btn {
+    margin-right: 1rem;
+  }
+}
+
+#navbar .nav > *.btn img {
+  width: 3.5rem;
+}
+
+@media screen and (min-width: 1500px) {
+  #navbar .nav > *.btn img {
+    width: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #navbar .nav > *.btn img {
+    width: 3rem;
+  }
+}
+
+@media screen and (max-width: 1149px) {
+  #navbar .nav > *.btn img {
+    width: 2rem;
+  }
+}
+
+#navbar .nav > *.connect {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+#navbar .nav > *.connect img {
+  width: 10rem;
+}
+
+@media screen and (min-width: 1500px) {
+  #navbar .nav > *.connect img {
+    width: 15rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #navbar .nav > *.connect img {
+    width: 9rem;
+  }
+}
+
+@media screen and (max-width: 1149px) {
+  #navbar .nav > *.connect img {
+    width: 6rem;
+  }
+}
+
+#hero {
+  margin-top: 115px;
+  position: relative;
+}
+
+@media screen and (max-width: 1400px) {
+  #hero {
+    margin-top: 85px;
+  }
+}
+
+#hero button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#hero img {
+  width: 100%;
+}
+
+#about p {
+  text-align: justify;
+}
+
+@media screen and (max-width: 575px) {
+  #about p {
+    text-align: left;
+  }
+}
+
+#about p.lefted {
+  padding-right: 286px;
+}
+
+@media screen and (max-width: 991px) {
+  #about p.lefted {
+    padding-right: 235px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #about p.lefted {
+    padding-right: 162px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #about p.lefted {
+    padding-right: 0;
+  }
+}
+
+#about .our-story-text {
+  position: relative;
+}
+
+#about .our-story-text > * {
+  position: absolute;
+}
+
+@media screen and (max-width: 435px) {
+  #about .our-story {
+    width: 100%;
+  }
+}
+
+#about .left-img {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 85px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  #about .left-img {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#about .right-text {
+  padding-left: 4rem;
+}
+
+@media screen and (max-width: 991px) {
+  #about .right-text {
+    padding-left: 2rem;
+  }
+  #about .right-text p {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #about .right-text {
+    padding-left: unset;
+  }
+}
+
+#about .mtop {
+  float: right;
+  width: 0;
+  height: 85px;
+}
+
+@media screen and (max-width: 575px) {
+  #about .mtop {
+    height: 0;
+  }
+}
+
+#about .right-img-container {
+  min-height: 37vw;
+  float: right;
+  clear: right;
+}
+
+@media screen and (min-width: 1400px) {
+  #about .right-img-container {
+    min-height: 300px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #about .right-img-container {
+    min-height: 60vw;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #about .right-img-container {
+    float: none;
+    min-height: unset;
+  }
+}
+
+#about .right-img-container img {
+  width: 270px;
+}
+
+@media screen and (max-width: 991px) {
+  #about .right-img-container img {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #about .right-img-container img {
+    width: 167px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#about .btns {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+#about .btns button img {
+  width: 15rem;
+}
+
+@media screen and (max-width: 600px) {
+  #about .btns button img {
+    width: 12rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #about .btns button img {
+    width: 9rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  #about .btns button img {
+    width: 7.5rem;
+  }
+}
+
+#NFT {
+  background-color: #ffab2d;
+  padding-top: 3rem;
+}
+
+#NFT * {
+  color: #000;
+}
+
+#NFT .heading {
+  font-size: 4.125rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 1399px) {
+  #NFT .heading {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #NFT .heading {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #NFT .heading {
+    font-size: 2.125rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #NFT .heading {
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+#NFT p {
+  text-align: justify;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1399px) {
+  #NFT p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  #NFT p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #NFT p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #NFT p {
+    text-align: left;
+  }
+}
+
+#NFT .piggy-container {
+  padding-left: 2.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  #NFT .piggy-container {
+    padding-left: 0;
+  }
+}
+
+#NFT .piggy-container .piggy {
+  margin-top: 8px;
+  width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  #NFT .piggy-container .piggy {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #NFT .piggy-container .piggy {
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#NFT button {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1399px) {
+  #NFT button {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  #NFT button {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #NFT button {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #NFT button {
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
