@@ -192,7 +192,7 @@ export const Mint = (props: HomeProps) => {
               renderer={renderCounter}
             />
           )}
-          {!wallet && (
+          {wallet && (
             <p className="mb-0">
               Balance: {(balance || 0).toLocaleString()} SOL
             </p>
@@ -201,18 +201,20 @@ export const Mint = (props: HomeProps) => {
         {/* </MintButton> */}
       </MintContainer>
 
-      <div
-        className="mint-info"
-        style={{
-          textAlign: "center",
-        }}
-      >
-        {!wallet && <p>Total Available: {itemsAvailable}</p>}
+      {wallet && (
+        <div
+          className="mint-info"
+          style={{
+            textAlign: "center",
+          }}
+        >
+          {wallet && <p>Total Available: {itemsAvailable}</p>}
 
-        {!wallet && <p>Redeemed: {itemsRedeemed}</p>}
+          {wallet && <p>Redeemed: {itemsRedeemed}</p>}
 
-        {!wallet && <p>Remaining: {itemsRemaining}</p>}
-      </div>
+          {wallet && <p>Remaining: {itemsRemaining}</p>}
+        </div>
+      )}
 
       <Snackbar
         open={alertState.open}
