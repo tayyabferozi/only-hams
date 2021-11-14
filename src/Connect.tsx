@@ -6,17 +6,9 @@ import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
 
 import { getCandyMachineState } from "./candy-machine";
+import { HomeProps } from "./Mint";
 
 const ConnectButton = WalletDialogButton;
-
-export interface HomeProps {
-  candyMachineId: anchor.web3.PublicKey;
-  config: anchor.web3.PublicKey;
-  connection: anchor.web3.Connection;
-  startDate: number;
-  treasury: anchor.web3.PublicKey;
-  txTimeout: number;
-}
 
 export const Connect = (props: HomeProps) => {
   const [, setStartDate] = useState(new Date(props.startDate));
@@ -46,7 +38,6 @@ export const Connect = (props: HomeProps) => {
   return (
     <>
       <div>
-        {/* <ConnectButton>{wallet ? "Connected" : "Connect Wallet"}</ConnectButton> */}
         <ConnectButton>
           {wallet ? (
             <img src="./assets/img/connected.png" alt="connected" />

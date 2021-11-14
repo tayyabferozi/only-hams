@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Mint } from "../Mint";
-import { HomeProps } from "../Home";
+import { HomeProps } from "../Mint";
 
 const NFTs = (props: HomeProps) => {
   return (

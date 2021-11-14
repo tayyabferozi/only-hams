@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeProps } from "../Home";
+import { HomeProps } from "../Mint";
 
 import { Mint } from "../Mint";
 

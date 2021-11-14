@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { HomeProps } from "../Home";
+import { HomeProps } from "../Mint";
 
-import { Connect } from "../Home";
+import { Connect } from "../Connect";
 
 const Navbar = (props: HomeProps) => {
   const [isSideNavActive, setIsSideNavActive] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = (props: HomeProps) => {
         <div className="close" onClick={toggleSideNav}>
           &times;
         </div>
-        <a href="#">Home</a>
+        <a href="#hero">Home</a>
         <a href="#about">Story</a>
         <a href="#NFT">Hams</a>
         <a href="/">Team</a>
@@ -48,7 +48,7 @@ const Navbar = (props: HomeProps) => {
           <div></div>
         </div>
         <div className="nav d-lg-flex d-none">
-          <a href="#">Home</a>
+          <a href="#hero">Home</a>
           <a href="#about">Story</a>
           <a href="#NFT">Hams</a>
           <a href="/">Team</a>
