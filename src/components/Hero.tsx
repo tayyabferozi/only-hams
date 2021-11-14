@@ -6,7 +6,7 @@ import { Mint } from "../Mint";
 const Hero = (props: HomeProps) => {
   return (
     <div id="hero">
-      <button className="mint-btn">
+      <div className="content">
         <Mint
           candyMachineId={props.candyMachineId}
           config={props.config}
@@ -15,7 +15,7 @@ const Hero = (props: HomeProps) => {
           treasury={props.treasury}
           txTimeout={props.txTimeout}
         />
-      </button>
+      </div>
       <img src="./assets/img/bg-hero.svg" alt="bg-hero" />
     </div>
   );

@@ -173,7 +173,7 @@ export const Connect = (props: HomeProps) => {
         {/* <ConnectButton>{wallet ? "Connected" : "Connect Wallet"}</ConnectButton> */}
         <ConnectButton>
           {wallet ? (
-            "Connected"
+            <img src="./assets/img/connected.png" alt="connected" />
           ) : (
             <img src="./assets/img/connect.png" alt="connect" />
           )}

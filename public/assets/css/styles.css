@@ -24,6 +24,47 @@ button {
   background: transparent;
 }
 
+.mint-info {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 490px;
+}
+
+@media screen and (max-width: 600px) {
+  .mint-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: unset;
+  }
+}
+
+.mint-info * {
+  font-family: sans-serif;
+}
+
+.mint-info p {
+  margin: 0 1rem !important;
+}
+
+@media screen and (max-width: 600px) {
+  .mint-info p {
+    margin: 0.25rem !important;
+  }
+}
+
 .text-purple {
   color: #c279fc;
 }
@@ -70,10 +111,14 @@ p {
 .mint-btn {
   font-size: 1.5rem;
   border: 0;
-  border-radius: 25px;
+  border-radius: 100px;
   background-color: #000;
   color: #fff !important;
   padding: 0.5rem 2rem;
+}
+
+.mint-btn p {
+  text-align: center !important;
 }
 
 .mint-btn * {
@@ -83,7 +128,7 @@ p {
 @media screen and (max-width: 575px) {
   .mint-btn {
     font-size: 1.25rem;
-    width: 185px;
+    width: 240px;
   }
 }
 
@@ -159,9 +204,9 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -169,14 +214,6 @@ p {
   background-color: #000;
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-@media screen and (max-width: 991px) {
-  #navbar {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
 }
 
 #navbar .logo {
@@ -187,6 +224,10 @@ p {
   #navbar .logo {
     margin-right: 14vw;
   }
+}
+
+#navbar .logo img {
+  width: 143px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -218,61 +259,73 @@ p {
   }
 }
 
-#navbar .nav > *.btn {
+#navbar .cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#navbar .cta .btn {
   margin: 0;
 }
 
 @media screen and (max-width: 1400px) {
-  #navbar .nav > *.btn {
+  #navbar .cta .btn {
     margin-right: 1rem;
   }
 }
 
-#navbar .nav > *.btn img {
+#navbar .cta .btn img {
   width: 3.5rem;
 }
 
 @media screen and (min-width: 1500px) {
-  #navbar .nav > *.btn img {
+  #navbar .cta .btn img {
     width: 4.5rem;
   }
 }
 
 @media screen and (max-width: 1400px) {
-  #navbar .nav > *.btn img {
+  #navbar .cta .btn img {
     width: 3rem;
   }
 }
 
 @media screen and (max-width: 1149px) {
-  #navbar .nav > *.btn img {
+  #navbar .cta .btn img {
     width: 2rem;
   }
 }
 
-#navbar .nav > *.connect {
+#navbar .cta .btn.connect {
   margin: 0;
   margin-left: 1rem;
 }
 
-#navbar .nav > *.connect img {
+#navbar .cta .btn.connect img {
   width: 10rem;
 }
 
 @media screen and (min-width: 1500px) {
-  #navbar .nav > *.connect img {
+  #navbar .cta .btn.connect img {
     width: 15rem;
   }
 }
 
 @media screen and (max-width: 1400px) {
-  #navbar .nav > *.connect img {
+  #navbar .cta .btn.connect img {
     width: 9rem;
   }
 }
 
 @media screen and (max-width: 1149px) {
-  #navbar .nav > *.connect img {
+  #navbar .cta .btn.connect img {
     width: 6rem;
   }
 }
@@ -280,6 +333,9 @@ p {
 #hero {
   margin-top: 115px;
   position: relative;
+  overflow: hidden;
+  background-image: url("../img/bg-hero.svg");
+  background-size: cover;
 }
 
 @media screen and (max-width: 1400px) {
@@ -288,16 +344,42 @@ p {
   }
 }
 
-#hero button {
+@media screen and (max-width: 767px) {
+  #hero {
+    min-height: 70vh;
+  }
+}
+
+#hero .content {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
 #hero img {
   width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  #hero img {
+    display: none;
+  }
 }
 
 #about p {
@@ -468,6 +550,10 @@ p {
 #NFT {
   background-color: #ffab2d;
   padding-top: 3rem;
+}
+
+#NFT .mint-info * {
+  color: #fff;
 }
 
 #NFT * {

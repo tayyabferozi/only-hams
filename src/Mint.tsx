@@ -175,37 +175,43 @@ export const Mint = (props: HomeProps) => {
           onClick={onMint}
           variant="contained"
         > */}
-        {isSoldOut ? (
-          "SOLD OUT"
-        ) : isActive ? (
-          isMinting ? (
-            <CircularProgress />
+        <button className="mint-btn">
+          {isSoldOut ? (
+            "SOLD OUT"
+          ) : isActive ? (
+            isMinting ? (
+              <CircularProgress />
+            ) : (
+              "MINT NOW"
+            )
           ) : (
-            "MINT NOW"
-          )
-        ) : (
-          <Countdown
-            date={startDate}
-            onMount={({ completed }) => completed && setIsActive(true)}
-            onComplete={() => setIsActive(true)}
-            renderer={renderCounter}
-          />
-        )}
+            <Countdown
+              date={startDate}
+              onMount={({ completed }) => completed && setIsActive(true)}
+              onComplete={() => setIsActive(true)}
+              renderer={renderCounter}
+            />
+          )}
+          {!wallet && (
+            <p className="mb-0">
+              Balance: {(balance || 0).toLocaleString()} SOL
+            </p>
+          )}
+        </button>
         {/* </MintButton> */}
       </MintContainer>
 
       <div
+        className="mint-info"
         style={{
           textAlign: "center",
         }}
       >
-        {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
+        {!wallet && <p>Total Available: {itemsAvailable}</p>}
 
-        {wallet && <p>Total Available: {itemsAvailable}</p>}
+        {!wallet && <p>Redeemed: {itemsRedeemed}</p>}
 
-        {wallet && <p>Redeemed: {itemsRedeemed}</p>}
-
-        {wallet && <p>Remaining: {itemsRemaining}</p>}
+        {!wallet && <p>Remaining: {itemsRemaining}</p>}
       </div>
 
       <Snackbar

@@ -25,6 +25,34 @@ button {
   background: transparent;
 }
 
+.mint-info {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 490px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    min-width: unset;
+  }
+
+  * {
+    font-family: sans-serif;
+  }
+
+  p {
+    margin: 0 1rem !important;
+
+    @media screen and (max-width: 600px) {
+      margin: 0.25rem !important;
+    }
+  }
+}
+
 .text-purple {
   color: $color1;
 }
@@ -71,10 +99,14 @@ p {
 .mint-btn {
   font-size: 1.5rem;
   border: 0;
-  border-radius: 25px;
+  border-radius: 100px;
   background-color: #000;
   color: #fff !important;
   padding: 0.5rem 2rem;
+
+  p {
+    text-align: center !important;
+  }
 
   * {
     color: #fff !important;
@@ -82,7 +114,7 @@ p {
 
   @media screen and (max-width: 575px) {
     font-size: 1.25rem;
-    width: 185px;
+    width: 240px;
   }
 }
 
@@ -169,16 +201,12 @@ p {
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   z-index: 1;
   background-color: #000;
   padding-top: 1rem;
   padding-bottom: 1rem;
-
-  @media screen and (max-width: 991px) {
-    justify-content: space-between;
-  }
 
   .logo {
     margin-right: 8vw;
@@ -188,6 +216,8 @@ p {
     }
 
     img {
+      width: 143px;
+
       @media screen and (max-width: 1400px) {
         width: 5rem;
       }
@@ -206,28 +236,34 @@ p {
       @media screen and (max-width: 1400px) {
         font-size: 0.85rem;
       }
+    }
+  }
 
-      &.btn {
-        margin: 0;
+  .cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        @media screen and (max-width: 1400px) {
-          margin-right: 1rem;
+    .btn {
+      margin: 0;
+
+      @media screen and (max-width: 1400px) {
+        margin-right: 1rem;
+      }
+
+      img {
+        width: 3.5rem;
+
+        @media screen and (min-width: 1500px) {
+          width: 4.5rem;
         }
 
-        img {
-          width: 3.5rem;
+        @media screen and (max-width: 1400px) {
+          width: 3rem;
+        }
 
-          @media screen and (min-width: 1500px) {
-            width: 4.5rem;
-          }
-
-          @media screen and (max-width: 1400px) {
-            width: 3rem;
-          }
-
-          @media screen and (max-width: 1149px) {
-            width: 2rem;
-          }
+        @media screen and (max-width: 1149px) {
+          width: 2rem;
         }
       }
 
@@ -258,20 +294,36 @@ p {
 #hero {
   margin-top: 115px;
   position: relative;
+  overflow: hidden;
+  background-image: url("../img/bg-hero.svg");
+  background-size: cover;
 
   @media screen and (max-width: 1400px) {
     margin-top: 85px;
   }
 
-  button {
+  @media screen and (max-width: 767px) {
+    min-height: 70vh;
+  }
+
+  .content {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     transform: translate(-50%, -50%);
   }
 
   img {
     width: 100%;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
 }
 
@@ -419,6 +471,12 @@ p {
 #NFT {
   background-color: $color2;
   padding-top: 3rem;
+
+  .mint-info {
+    * {
+      color: #fff;
+    }
+  }
 
   * {
     color: #000;

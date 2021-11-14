@@ -40,7 +40,7 @@ const Navbar = (props: HomeProps) => {
       </div>
       <div id="navbar">
         <div className="logo">
-          <img src={"./assets/img/logo.svg"} alt="logo" />
+          <img src={"./assets/img/logo.png"} alt="logo" />
         </div>
         <div className="hamburger d-lg-none d-block" onClick={toggleSideNav}>
           <div></div>
@@ -54,6 +54,9 @@ const Navbar = (props: HomeProps) => {
           <a href="/">Team</a>
           <a href="/">Roadmap</a>
           <a href="/">FAQ</a>
+        </div>
+
+        <div className="cta d-lg-flex d-none">
           <div className="btn connect">
             {/* <img src="./assets/img/connect.png" alt="connect" /> */}
             <Connect {...props} />

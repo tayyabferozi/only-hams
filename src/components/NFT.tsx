@@ -22,16 +22,14 @@ const NFTs = (props: HomeProps) => {
               pigs will ever be the same. Grab your one of a kind Pig today.
             </p>
 
-            <button className="mint-btn">
-              <Mint
-                candyMachineId={props.candyMachineId}
-                config={props.config}
-                connection={props.connection}
-                startDate={props.startDate}
-                treasury={props.treasury}
-                txTimeout={props.txTimeout}
-              />
-            </button>
+            <Mint
+              candyMachineId={props.candyMachineId}
+              config={props.config}
+              connection={props.connection}
+              startDate={props.startDate}
+              treasury={props.treasury}
+              txTimeout={props.txTimeout}
+            />
           </div>
           <div className="col-md-5 piggy-container order-1 order-md-2">
             <img className="piggy" src="./assets/img/piggy.gif" alt="piggy" />
