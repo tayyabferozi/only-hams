@@ -16,9 +16,9 @@ const Navbar = (props: HomeProps) => {
         <div className="close" onClick={toggleSideNav}>
           &times;
         </div>
-        <a href="/">Home</a>
-        <a href="/">Story</a>
-        <a href="/">Hams</a>
+        <a href="#">Home</a>
+        <a href="#about">Story</a>
+        <a href="#NFT">Hams</a>
         <a href="/">Team</a>
         <a href="/">Roadmap</a>
         <a href="/">FAQ</a>
@@ -48,9 +48,9 @@ const Navbar = (props: HomeProps) => {
           <div></div>
         </div>
         <div className="nav d-lg-flex d-none">
-          <a href="/">Home</a>
-          <a href="/">Story</a>
-          <a href="/">Hams</a>
+          <a href="#">Home</a>
+          <a href="#about">Story</a>
+          <a href="#NFT">Hams</a>
           <a href="/">Team</a>
           <a href="/">Roadmap</a>
           <a href="/">FAQ</a>

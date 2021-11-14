@@ -3,6 +3,7 @@
   font-family: "Bowlby One", cursive;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a,
