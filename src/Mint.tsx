@@ -175,7 +175,11 @@ export const Mint = (props: HomeProps) => {
           onClick={onMint}
           variant="contained"
         > */}
-        <button className="mint-btn">
+        <button
+          disabled={isSoldOut || isMinting || !isActive}
+          onClick={onMint}
+          className="mint-btn"
+        >
           {isSoldOut ? (
             "SOLD OUT"
           ) : isActive ? (

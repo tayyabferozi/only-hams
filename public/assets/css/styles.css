@@ -120,9 +120,6 @@ p {
 
 .mint-btn p {
   text-align: center !important;
-}
-
-.mint-btn * {
   color: #fff !important;
 }
 
@@ -333,10 +330,22 @@ p {
 
 #hero {
   margin-top: 115px;
-  position: relative;
-  overflow: hidden;
   background-image: url("../img/bg-hero.svg");
   background-size: cover;
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (max-width: 1400px) {
@@ -352,10 +361,6 @@ p {
 }
 
 #hero .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,18 +374,10 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 #hero img {
-  width: 100%;
-}
-
-@media screen and (max-width: 767px) {
-  #hero img {
-    display: none;
-  }
+  display: none;
 }
 
 #about p {
@@ -557,7 +554,8 @@ p {
   color: #fff;
 }
 
-#NFT * {
+#NFT h1,
+#NFT p {
   color: #000;
 }
 
