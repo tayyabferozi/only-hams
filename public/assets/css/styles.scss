@@ -2,6 +2,13 @@
 
 $color1: #c279fc;
 $color2: #ffab2d;
+$color3: #cc00ff;
+$color4: #77cdf5;
+$color5: #e30064;
+$color6: #ffd56a;
+$color7: #fb37ff;
+$color8: #0094ff;
+$color9: #00a8a8;
 
 * {
   font-family: "Bowlby One", cursive;
@@ -18,6 +25,21 @@ button {
 
   &:hover {
     opacity: 0.9;
+  }
+}
+
+#dark-overlay {
+  background-color: rgba(0, 0, 0, 0.529);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: none;
+
+  &.active {
+    display: block;
   }
 }
 
@@ -58,8 +80,32 @@ button {
   color: $color1;
 }
 
+.text-dark-purple {
+  color: $color3;
+}
+
 .text-orange {
   color: $color2;
+}
+
+.text-blue {
+  color: $color4;
+}
+
+.text-red {
+  color: $color5;
+}
+
+.text-pink {
+  color: $color7;
+}
+
+.text-dark-blue {
+  color: $color8;
+}
+
+.text-sea-grean {
+  color: $color9;
 }
 
 .hamburger {
@@ -172,7 +218,9 @@ p {
 }
 
 #about,
-#NFT {
+#NFT,
+#team,
+#roadmap {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -324,6 +372,21 @@ p {
 }
 
 #about {
+  #video {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 92%;
+    display: none;
+    z-index: 3;
+
+    &.active {
+      display: block;
+    }
+  }
+
   p {
     text-align: justify;
 
@@ -367,13 +430,6 @@ p {
     position: sticky;
     top: 85px;
     margin-bottom: 15px;
-
-    @media screen and (max-width: 767px) {
-      width: 70%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
   }
 
   .right-text {
@@ -462,11 +518,28 @@ p {
       }
     }
   }
+
+  .meeting {
+    @media screen and (min-width: 1400px) {
+      margin-top: -2rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin: 2rem 0;
+    }
+  }
+
+  .small-text {
+    @media screen and (min-width: 1400px) {
+      font-size: 0.875rem;
+    }
+  }
 }
 
 #NFT {
   background-color: $color2;
   padding-top: 3rem;
+  padding-bottom: 4.5rem;
 
   .mint-info {
     * {
@@ -569,6 +642,177 @@ p {
       margin-left: auto;
       display: block;
       margin-right: auto;
+    }
+  }
+}
+
+#team {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 100px solid $color2;
+
+  .heading {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .mem {
+    * {
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-top: 0.5rem;
+      font-size: 0.74rem;
+    }
+  }
+}
+
+#roadmap {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  .heading {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 7rem;
+  }
+
+  .roadmap {
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      position: relative;
+      padding: 5rem 3rem;
+
+      @media screen and (max-width: 575px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .count {
+        position: absolute;
+        top: -100px;
+        width: 350px;
+        left: 4px;
+
+        @media screen and (max-width: 991px) {
+          top: -60px;
+          width: 200px;
+        }
+
+        &.right {
+          left: unset;
+          right: 4px;
+        }
+      }
+
+      .img {
+        @media screen and (max-width: 991px) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      &::before,
+      &::after,
+      .right-border,
+      &:last-child::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        left: 0;
+        box-shadow: 0 0 15px $color2;
+        top: 0;
+      }
+
+      .right-border {
+        left: unset;
+        right: 0;
+      }
+
+      &::after,
+      .right-border {
+        height: 100%;
+        width: 4px;
+      }
+
+      &:last-child::after {
+        top: unset;
+        bottom: 0;
+      }
+
+      &.left {
+        &::after {
+          left: unset;
+          right: 0;
+        }
+
+        .img {
+          padding-right: 3rem;
+        }
+      }
+
+      &.right {
+        &::after {
+        }
+
+        .img {
+          padding-left: 3rem;
+        }
+      }
+
+      .main {
+        max-width: 975px;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  * {
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
+    }
+
+    .logo {
+      width: 143px;
+
+      @media screen and (max-width: 1400px) {
+        width: 5rem;
+      }
+    }
+
+    img {
+      width: 65px;
+      margin-left: 2rem;
+
+      @media screen and (max-width: 600px) {
+        width: 45px;
+      }
+
+      &:first-child {
+        margin-top: 2rem;
+        margin-left: 0;
+      }
     }
   }
 }

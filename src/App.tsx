@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
+import $ from "jquery";
 
 import * as anchor from "@project-serum/anchor";
 import { clusterApiUrl } from "@solana/web3.js";
@@ -23,6 +24,9 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import NFT from "./components/NFT";
+import Team from "./components/Team";
+import Roadmap from "./components/Roadmap";
+import Footer from "./components/Footer";
 
 const treasury = new anchor.web3.PublicKey(
   process.env.REACT_APP_TREASURY_ADDRESS!
@@ -84,8 +88,16 @@ const App = () => {
     []
   );
 
+  useEffect(() => {
+    $("#dark-overlay").click(function () {
+      $(this).toggleClass("active");
+      $("#video").toggleClass("active");
+    });
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
+      <div id="dark-overlay"></div>
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect={true}>
           <WalletDialogProvider>
@@ -114,6 +126,9 @@ const App = () => {
               treasury={treasury}
               txTimeout={txTimeout}
             />
+            <Team />
+            <Roadmap />
+            <Footer />
           </WalletDialogProvider>
         </WalletProvider>
       </ConnectionProvider>
