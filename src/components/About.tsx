@@ -1,7 +1,10 @@
 import { useState } from "react";
 import $ from "jquery";
+import { HomeProps } from "../Mint";
 
-const About = () => {
+import { Mint } from "../Mint";
+
+const About = (props: HomeProps) => {
   const [showMore, setShowMore] = useState(true);
 
   const toggleShowMore = () => {
@@ -125,7 +128,7 @@ const About = () => {
         </div>
       </div>
       <div id="more" style={{ display: "none" }}>
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
             <div className="col-md-6 mt-5 ">
               <img
@@ -183,7 +186,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
             <div className="col-md-8 right-text ps-0 pe-2 ps-md-2 pe-md-0 d-flex align-items-center order-2 order-md-1">
               <p className="mb-0">
@@ -210,7 +213,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
             <div className="meeting col-md-6">
               <img
@@ -232,7 +235,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="container-fluid ps-2">
+        <div className="container ps-2">
           <div className="row">
             <div className="col-md-6 right-text d-flex flex-column align-items-center justify-content-center order-2 order-md-1">
               <p className="text-center">
@@ -262,7 +265,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="container-fluid ">
+        <div className="container">
           <div className="row">
             <div className="col-md-6 ps-0 ps-md-2 pe-0 pe-md-5 mt-4">
               <img
@@ -315,15 +318,25 @@ const About = () => {
             </div>
 
             <div className="col-12">
-              <img
-                className="d-block mx-auto"
-                src="./assets/img/help-now.png"
-                style={{ width: "100%", maxWidth: "200px" }}
-                alt="help"
-              />
+              <a href="#hero">
+                <img
+                  className="d-block mx-auto"
+                  src="./assets/img/help-now.png"
+                  style={{ width: "100%", maxWidth: "200px" }}
+                  alt="help"
+                />
+              </a>
             </div>
 
-            <p className="text-center mt-4">999/10000 Helped</p>
+            <Mint
+              onlyValues
+              candyMachineId={props.candyMachineId}
+              config={props.config}
+              connection={props.connection}
+              startDate={props.startDate}
+              treasury={props.treasury}
+              txTimeout={props.txTimeout}
+            />
           </div>
         </div>
       </div>

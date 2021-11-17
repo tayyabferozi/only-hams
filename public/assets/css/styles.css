@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 * {
   font-family: "Bowlby One", cursive;
   -webkit-box-sizing: border-box;
@@ -231,7 +232,8 @@ p {
 #about,
 #NFT,
 #team,
-#roadmap {
+#roadmap,
+#FAQ {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -880,6 +882,73 @@ p {
 
 #roadmap .roadmap .item .main img {
   width: 100%;
+}
+
+#FAQ {
+  background-color: #ffab2d;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#FAQ .piggy {
+  width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  #FAQ .piggy {
+    position: absolute;
+    opacity: 0.2;
+    width: 40%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+#FAQ .faqs .item {
+  padding: 1rem 3rem;
+  -webkit-box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.152);
+          box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.152);
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+#FAQ .faqs .item:not(.active) .question::after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+#FAQ .faqs .item p {
+  margin-bottom: 0.5rem;
+}
+
+#FAQ .faqs .item .question {
+  position: relative;
+}
+
+#FAQ .faqs .item .question::after {
+  position: absolute;
+  content: "";
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  right: 0;
+  top: 0;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#FAQ .faqs .item .answer {
+  display: none;
+}
+
+#FAQ .faqs .item .answer,
+#FAQ .faqs .item .answer * {
+  font-family: "Raleway", sans-serif;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from "react";
+import { useMemo, useEffect, useState } from "react";
 import $ from "jquery";
 
 import * as anchor from "@project-serum/anchor";
@@ -26,6 +26,7 @@ import About from "./components/About";
 import NFT from "./components/NFT";
 import Team from "./components/Team";
 import Roadmap from "./components/Roadmap";
+import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
 const treasury = new anchor.web3.PublicKey(
@@ -117,7 +118,14 @@ const App = () => {
               treasury={treasury}
               txTimeout={txTimeout}
             />
-            <About />
+            <About
+              candyMachineId={candyMachineId}
+              config={config}
+              connection={connection}
+              startDate={startDateSeed}
+              treasury={treasury}
+              txTimeout={txTimeout}
+            />
             <NFT
               candyMachineId={candyMachineId}
               config={config}
@@ -128,6 +136,7 @@ const App = () => {
             />
             <Team />
             <Roadmap />
+            <FAQ />
             <Footer />
           </WalletDialogProvider>
         </WalletProvider>

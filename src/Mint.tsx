@@ -36,6 +36,7 @@ export interface HomeProps {
   startDate: number;
   treasury: anchor.web3.PublicKey;
   txTimeout: number;
+  onlyValues?: boolean;
 }
 
 export const Mint = (props: HomeProps) => {
@@ -167,73 +168,82 @@ export const Mint = (props: HomeProps) => {
     props.connection,
   ]);
 
-  return (
-    <>
-      <MintContainer>
-        {/* <MintButton
+  if (!props.onlyValues) {
+    return (
+      <>
+        <MintContainer>
+          {/* <MintButton
           disabled={isSoldOut || isMinting || !isActive}
           onClick={onMint}
           variant="contained"
         > */}
-        <button
-          disabled={isSoldOut || isMinting || !isActive}
-          onClick={onMint}
-          className="mint-btn"
-        >
-          {isSoldOut ? (
-            "SOLD OUT"
-          ) : isActive ? (
-            isMinting ? (
-              <CircularProgress />
+          <button
+            disabled={isSoldOut || isMinting || !isActive}
+            onClick={onMint}
+            className="mint-btn"
+          >
+            {isSoldOut ? (
+              "SOLD OUT"
+            ) : isActive ? (
+              isMinting ? (
+                <CircularProgress />
+              ) : (
+                "MINT NOW"
+              )
             ) : (
-              "MINT NOW"
-            )
-          ) : (
-            <Countdown
-              date={startDate}
-              onMount={({ completed }) => completed && setIsActive(true)}
-              onComplete={() => setIsActive(true)}
-              renderer={renderCounter}
-            />
-          )}
-          {wallet && (
-            <p className="mb-0">
-              Balance: {(balance || 0).toLocaleString()} SOL
-            </p>
-          )}
-        </button>
-        {/* </MintButton> */}
-      </MintContainer>
+              <Countdown
+                date={startDate}
+                onMount={({ completed }) => completed && setIsActive(true)}
+                onComplete={() => setIsActive(true)}
+                renderer={renderCounter}
+              />
+            )}
+            {wallet && (
+              <p className="mb-0">
+                Balance: {(balance || 0).toLocaleString()} SOL
+              </p>
+            )}
+          </button>
+          {/* </MintButton> */}
+        </MintContainer>
 
-      {wallet && (
-        <div
-          className="mint-info"
-          style={{
-            textAlign: "center",
-          }}
-        >
-          {wallet && <p>Total Available: {itemsAvailable}</p>}
+        {wallet && (
+          <div
+            className="mint-info"
+            style={{
+              textAlign: "center",
+            }}
+          >
+            {wallet && <p>Total Available: {itemsAvailable}</p>}
 
-          {wallet && <p>Redeemed: {itemsRedeemed}</p>}
+            {wallet && <p>Redeemed: {itemsRedeemed}</p>}
 
-          {wallet && <p>Remaining: {itemsRemaining}</p>}
-        </div>
-      )}
+            {wallet && <p>Remaining: {itemsRemaining}</p>}
+          </div>
+        )}
 
-      <Snackbar
-        open={alertState.open}
-        autoHideDuration={6000}
-        onClose={() => setAlertState({ ...alertState, open: false })}
-      >
-        <Alert
+        <Snackbar
+          open={alertState.open}
+          autoHideDuration={6000}
           onClose={() => setAlertState({ ...alertState, open: false })}
-          severity={alertState.severity}
         >
-          {alertState.message}
-        </Alert>
-      </Snackbar>
-    </>
-  );
+          <Alert
+            onClose={() => setAlertState({ ...alertState, open: false })}
+            severity={alertState.severity}
+          >
+            {alertState.message}
+          </Alert>
+        </Snackbar>
+      </>
+    );
+  } else {
+    return (
+      <p className="text-center mt-4">
+        {wallet && itemsRemaining ? itemsRemaining : 0}/
+        {wallet && itemsAvailable ? itemsAvailable : 0} Helped
+      </p>
+    );
+  }
 };
 
 interface AlertState {
