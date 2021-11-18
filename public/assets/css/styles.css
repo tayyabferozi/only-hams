@@ -914,6 +914,12 @@ p {
   cursor: pointer;
 }
 
+@media screen and (max-width: 767px) {
+  #FAQ .faqs .item {
+    padding: 1rem 2rem;
+  }
+}
+
 #FAQ .faqs .item:not(.active) .question::after {
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg);
@@ -932,14 +938,20 @@ p {
   content: "";
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
-  right: 0;
-  top: 0;
+  right: -25px;
+  top: 50%;
   border: solid #fff;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 5px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+@media screen and (max-width: 767px) {
+  #FAQ .faqs .item .question::after {
+    right: -15px;
+  }
 }
 
 #FAQ .faqs .item .answer {

@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HomeProps } from "../Mint";
+import { Link } from "react-scroll";
+import $ from "jquery";
 
 import { Connect } from "../Connect";
 
@@ -10,18 +12,36 @@ const Navbar = (props: HomeProps) => {
     setIsSideNavActive((prevState) => !prevState);
   };
 
+  useEffect(() => {
+    $(".nav-sm a").click(function () {
+      setIsSideNavActive(false);
+    });
+  }, []);
+
   return (
     <>
       <div className={`nav-sm ${isSideNavActive ? "active" : ""}`}>
         <div className="close" onClick={toggleSideNav}>
           &times;
         </div>
-        <a href="#hero">Home</a>
-        <a href="#about">Story</a>
-        <a href="#NFT">Hams</a>
-        <a href="#team">Team</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#FAQ">FAQ</a>
+        <Link to="#hero" offset={-100}>
+          Home
+        </Link>
+        <Link to="about" offset={-80}>
+          Story
+        </Link>
+        <Link to="NFT" offset={-80}>
+          Hams
+        </Link>
+        <Link to="team" offset={-80}>
+          Team
+        </Link>
+        <Link to="roadmap" offset={-80}>
+          Roadmap
+        </Link>
+        <Link to="FAQ" offset={-80}>
+          FAQ
+        </Link>
         <div className="btn connect">
           {/* <img src="./assets/img/connect.png" alt="connect" /> */}
           <Connect {...props} />
@@ -48,12 +68,24 @@ const Navbar = (props: HomeProps) => {
           <div></div>
         </div>
         <div className="nav d-lg-flex d-none">
-          <a href="#hero">Home</a>
-          <a href="#about">Story</a>
-          <a href="#NFT">Hams</a>
-          <a href="#team">Team</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#FAQ">FAQ</a>
+          <Link to="hero" offset={-80}>
+            Home
+          </Link>
+          <Link to="about" offset={-80}>
+            Story
+          </Link>
+          <Link to="NFT" offset={-80}>
+            Hams
+          </Link>
+          <Link to="team" offset={-80}>
+            Team
+          </Link>
+          <Link to="roadmap" offset={-80}>
+            Roadmap
+          </Link>
+          <Link to="FAQ" offset={-80}>
+            FAQ
+          </Link>
         </div>
 
         <div className="cta d-lg-flex d-none">

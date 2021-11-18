@@ -814,6 +814,10 @@ p {
       margin-bottom: 1rem;
       cursor: pointer;
 
+      @media screen and (max-width: 767px) {
+        padding: 1rem 2rem;
+      }
+
       &:not(.active) {
         .question {
           &::after {
@@ -833,13 +837,17 @@ p {
           position: absolute;
           content: "";
           transition: 0.4s ease;
-          right: 0;
-          top: 0;
+          right: -25px;
+          top: 50%;
           border: solid #fff;
           border-width: 0 3px 3px 0;
           display: inline-block;
           padding: 5px;
           transform: rotate(45deg);
+
+          @media screen and (max-width: 767px) {
+            right: -15px;
+          }
         }
       }
 
