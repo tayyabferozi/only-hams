@@ -241,10 +241,12 @@ export const Mint = (props: HomeProps) => {
       <p className="text-center mt-4">
         {wallet ? (
           <>
-            {itemsRedeemed && itemsRemaining
+            {/* {itemsRedeemed && itemsRemaining
               ? itemsRemaining + itemsRedeemed
               : 0}
-            /{itemsAvailable ? itemsAvailable : 0} Helped
+            /{itemsAvailable ? itemsAvailable : 0} Helped */}
+            {itemsRedeemed ? itemsRedeemed : 0}
+            Helped
           </>
         ) : (
           "Connect to see"
