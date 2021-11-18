@@ -16,7 +16,6 @@ const Hero = (props: HomeProps) => {
           txTimeout={props.txTimeout}
         />
       </div>
-      <img src="./assets/img/bg-hero.svg" alt="bg-hero" />
     </div>
   );
 };

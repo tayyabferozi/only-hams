@@ -341,11 +341,12 @@ p {
 
 #hero {
   margin-top: 115px;
+  padding: 1rem;
   background-image: url("../img/bg-hero.svg");
   background-size: cover;
   min-height: 80vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
 
