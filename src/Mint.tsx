@@ -245,8 +245,7 @@ export const Mint = (props: HomeProps) => {
               ? itemsRemaining + itemsRedeemed
               : 0}
             /{itemsAvailable ? itemsAvailable : 0} Helped */}
-            {itemsRedeemed ? itemsRedeemed : 0}
-            Helped
+            {itemsRedeemed ? itemsRedeemed : 0} Helped
           </>
         ) : (
           "Connect to see"
