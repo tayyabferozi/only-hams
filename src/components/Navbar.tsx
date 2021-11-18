@@ -19,9 +19,9 @@ const Navbar = (props: HomeProps) => {
         <a href="#hero">Home</a>
         <a href="#about">Story</a>
         <a href="#NFT">Hams</a>
-        <a href="/">Team</a>
-        <a href="/">Roadmap</a>
-        <a href="/">FAQ</a>
+        <a href="#team">Team</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#FAQ">FAQ</a>
         <div className="btn connect">
           {/* <img src="./assets/img/connect.png" alt="connect" /> */}
           <Connect {...props} />
@@ -51,9 +51,9 @@ const Navbar = (props: HomeProps) => {
           <a href="#hero">Home</a>
           <a href="#about">Story</a>
           <a href="#NFT">Hams</a>
-          <a href="/">Team</a>
-          <a href="/">Roadmap</a>
-          <a href="/">FAQ</a>
+          <a href="#team">Team</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#FAQ">FAQ</a>
         </div>
 
         <div className="cta d-lg-flex d-none">

@@ -342,11 +342,13 @@ const About = (props: HomeProps) => {
       </div>
       <div className="btns d-flex justify-content-center">
         <button>
-          <img
-            src={`./assets/img/${showMore ? "read-more" : "read-less"}.png`}
-            alt="see-more"
-            onClick={toggleShowMore}
-          />
+          <a href={`${showMore ? "#about" : "#more"}`}>
+            <img
+              src={`./assets/img/${showMore ? "read-more" : "read-less"}.png`}
+              alt="see-more"
+              onClick={toggleShowMore}
+            />
+          </a>
         </button>
         <button>
           <img

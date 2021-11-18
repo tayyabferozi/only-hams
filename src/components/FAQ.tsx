@@ -6,11 +6,16 @@ const FAQ = () => {
     $("#FAQ .item").click(function () {
       let $this = $(this);
 
-      $("#FAQ .item").removeClass("active");
-      $("#FAQ .item .answer").slideUp();
-      // $this.siblings().find(".answer").slideUp();
-      $this.find(".answer").slideToggle();
-      $this.addClass("active");
+      if ($this.hasClass("active")) {
+        $this.removeClass("active");
+        $("#FAQ .item .answer").slideUp();
+      } else {
+        $("#FAQ .item").removeClass("active");
+        $("#FAQ .item .answer").slideUp();
+        // $this.siblings().find(".answer").slideUp();
+        $this.find(".answer").slideToggle();
+        $this.addClass("active");
+      }
     });
   }, []);
   return (

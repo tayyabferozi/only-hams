@@ -239,8 +239,16 @@ export const Mint = (props: HomeProps) => {
   } else {
     return (
       <p className="text-center mt-4">
-        {wallet && itemsRemaining ? itemsRemaining : 0}/
-        {wallet && itemsAvailable ? itemsAvailable : 0} Helped
+        {wallet ? (
+          <>
+            {itemsRedeemed && itemsRemaining
+              ? itemsRemaining + itemsRedeemed
+              : 0}
+            /{itemsAvailable ? itemsAvailable : 0} Helped
+          </>
+        ) : (
+          "Connect to see"
+        )}
       </p>
     );
   }
